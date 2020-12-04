@@ -1,0 +1,14 @@
+<div class="main-container">
+    <div class="inner-container">
+        <div class="card text-center">
+            <span>
+                <img src="{{user.image}}" />
+            </span>
+            <br>
+            <p>{{title}}</p>
+            <h3>{{detail}}</h3>
+            <br>
+            <app-user-options [userDetail]="user" (userDetailShown)="changeTitle($event)"></app-user-options>
+        </div>
+    </div>
+</div>

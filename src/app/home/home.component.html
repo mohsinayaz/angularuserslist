@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Users List</h1>
+    <div class="card text-center" *ngFor="let user of users">
+        <span (click)='goToUserDetail(user)'>
+            <img src="{{user.image}}" />
+        </span>
+        <p (click)='goToUserDetail(user)'>{{user.name}}</p>
+    </div>
+</div>

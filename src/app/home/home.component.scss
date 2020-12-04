@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card {
+        align-items: center;
+        margin: 1rem;
+        width: 500px;
+
+        span {
+            border: 1px solid rgba(0,0,0,.25);
+            margin: 1rem;
+            width: 136px;
+            border-radius: 50%;
+            cursor: pointer;
+            img {
+                border-radius: 70px;
+            }
+        }
+        p {
+            font-weight: bold;;
+            cursor: pointer;
+        }
+        p:hover {
+            color: blue;
+        }
+    }
+}
