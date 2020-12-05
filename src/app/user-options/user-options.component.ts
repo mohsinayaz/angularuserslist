@@ -11,15 +11,13 @@ export class UserOptionsComponent implements OnInit {
   @Output() userDetailShown = new EventEmitter();
   birthYear: string;
   userData= [];
-  currentValue: number = 0;
-  previousValue: number;
+  activeItem: number = 0;
   activeClass: string;
   allItems;
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.getBirthYear();
     this.allItems = document.querySelectorAll('i');
     this.userData = [
       {
@@ -45,24 +43,19 @@ export class UserOptionsComponent implements OnInit {
     ]
   }
 
-  // getBirthYear() {
-  //   this.birthYear = new Date(this.userDetail.registered.date).getFullYear().toString();
-  // }
-
   sendDetail(userData) {
-    const currentIndex = this.userData.indexOf(userData);
-    if (currentIndex === this.currentValue) {
+    const changeActiveItem = this.userData.indexOf(userData);
+    if (changeActiveItem === this.activeItem) {
       return;
     }
-    this.setClasses(currentIndex);
-    this.currentValue = currentIndex;
-    console.log(this.currentValue);
+    this.setClasses(changeActiveItem);
+    this.activeItem = changeActiveItem;
     this.userDetailShown.emit(userData)
   }
 
-  setClasses(currentItem) {
-    this.allItems[currentItem].classList.add("active");
-    this.allItems[this.currentValue].classList.remove("active");
+  setClasses(changeActiveItem) {
+    this.allItems[changeActiveItem].classList.add("active");
+    this.allItems[this.activeItem].classList.remove("active");
   }
 
 }
