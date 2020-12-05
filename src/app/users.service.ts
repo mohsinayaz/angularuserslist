@@ -23,7 +23,6 @@ export class UsersService {
             birthYear: new Date(user.registered.date).getFullYear().toString()
           }
         });
-        console.log(newData);
         return newData;
       }));
   }

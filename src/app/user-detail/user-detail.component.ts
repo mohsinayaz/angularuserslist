@@ -11,11 +11,13 @@ export class UserDetailComponent implements OnInit {
   user;
   title: string;
   detail: string;
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      console.log(params);
       this.user = JSON.parse(params.data);
     })
     this.detail = this.user.name;
@@ -24,8 +26,7 @@ export class UserDetailComponent implements OnInit {
 
   changeTitle($event) {
     this.title = $event.title;
-    this.detail = $event.detail
-    console.log($event);
+    this.detail = $event.detail;
   }
 
 }
