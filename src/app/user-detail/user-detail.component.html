@@ -1,14 +1,16 @@
-<div class="main-container">
+<div class="main-container" *ngIf="user">
+    <h1>User Detail</h1>
     <div class="inner-container">
         <div class="card text-center">
             <span>
                 <img src="{{user.image}}" />
             </span>
             <br>
-            <p>{{title}}</p>
-            <h3>{{detail}}</h3>
+            <p>{{user.title}}</p>
+            <h3>{{user.name}}</h3>
             <br>
             <app-user-options [userDetail]="user" (userDetailShown)="changeTitle($event)"></app-user-options>
         </div>
     </div>
+    <p><a routerLink="/" class="btn btn-success"><i class="fa fa-arrow-left" aria-hidden="true"></i> <strong> Back To Users List</strong></a></p>
 </div>

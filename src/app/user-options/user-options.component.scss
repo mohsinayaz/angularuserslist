@@ -1,6 +1,3 @@
-$text-color: #00000f;
-$on-hover-color: blue;
-
 .container {
     display: flex;
     justify-content: space-around;
@@ -12,5 +9,7 @@ $on-hover-color: blue;
 }
 
 .active {
-    border-bottom: 1px solid $text-color;
+    border-top: solid green;
+    color: green;
+    transition: color .30s ease-out;
 }
