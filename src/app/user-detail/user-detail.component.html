@@ -5,9 +5,8 @@
             <span>
                 <img src="{{user.image}}" />
             </span>
-            <br>
-            <p>{{user.title}}</p>
-            <h3>{{user.name}}</h3>
+            <p class="title">{{user.title}}</p>
+            <h3 class="user-info">{{user.name}}</h3>
             <br>
             <app-user-options [userDetail]="user" (userDetailShown)="changeTitle($event)"></app-user-options>
         </div>
