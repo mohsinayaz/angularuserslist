@@ -23,9 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToUserDetail(user: User) {
-    this.router.navigate(['/user-detail'], {
-      queryParams: {data: JSON.stringify(user)}
-    })
+    this.router.navigate(['/user/' + user.id])
   }
 
 }

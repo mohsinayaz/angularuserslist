@@ -9,10 +9,8 @@ import { User } from '../interfaces/user';
 export class UserOptionsComponent implements OnInit {
   @Input() userDetail: User;
   @Output() userDetailShown = new EventEmitter();
-  birthYear: string;
   userData= [];
   activeItem: number = 0;
-  activeClass: string;
   allItems;
 
   constructor() { }
