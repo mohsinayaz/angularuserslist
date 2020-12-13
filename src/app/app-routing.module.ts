@@ -4,8 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const routes: Routes = [
-  {path: '' , component: HomeComponent},
-  {path: 'user/:userId', component: UserDetailComponent}
+  {
+    path: '' , redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: 'users', loadChildren: () => import('../app/users-list/users-list.module').then(m => m.UsersListModule)
+  },
+  {
+    path: 'user/:id', loadChildren: () => import('../app/user-detail/user-detail.module').then(m => m.UserDetailModule)
+  }
 ];
 
 @NgModule({

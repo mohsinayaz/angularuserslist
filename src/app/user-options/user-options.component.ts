@@ -11,7 +11,7 @@ export class UserOptionsComponent implements OnInit {
   @Output() userDetailShown = new EventEmitter();
   userData= [];
   activeItem: number = 0;
-  allItems;
+  allItems: NodeListOf<HTMLElement>;
 
   constructor() { }
 

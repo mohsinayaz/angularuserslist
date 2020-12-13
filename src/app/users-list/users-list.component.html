@@ -1,0 +1,11 @@
+<ng-tempalte *ngIf="users" class="template">
+    <h1 class="heading">Users List</h1>
+    <div class="container">
+        <div class="card text-center" (click)='goToUserDetail(user)' *ngFor="let user of users">
+            <span>
+                <img src="{{user.image}}" />
+            </span>
+            <p>{{user.name}}</p>
+        </div>
+    </div>
+</ng-tempalte>
